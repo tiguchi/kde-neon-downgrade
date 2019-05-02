@@ -15,7 +15,7 @@ This is something you need to do by hand first. Edit the file `/etc/apt/sources.
 
 For example:
 
-Replace `http://archive.neon.kde.org/testing/` with `http://archive.neon.kde.org/user/
+Replace `http://archive.neon.kde.org/testing/` with `http://archive.neon.kde.org/user/`
 
 #### 2. Download and run the downgrade script
 
