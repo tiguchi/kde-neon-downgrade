@@ -1,13 +1,13 @@
 #/bin/bash
 
-readarray -t NEWER_PACKAGES <<< "$(apt-show-versions | fgrep newer | cut -d ' ' -f1 | cut -d ':' -f1)"
-PLAN=""
-
 echo "Updating package cache..."
 
 sudo apt-get update
 
 echo "Finding downgrade candidates..."
+
+readarray -t NEWER_PACKAGES <<< "$(apt-show-versions | fgrep newer | cut -d ' ' -f1 | cut -d ':' -f1)"
+PLAN=""
 
 for PKG in "${NEWER_PACKAGES[@]}"; do
 	VERSIONS=$(apt-cache policy "$PKG" | sed --expression='1,/\*\*\*/d')
